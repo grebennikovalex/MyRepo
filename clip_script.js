@@ -1,4 +1,4 @@
-	// by grebennikovalex
+	/* by grebennikovalex */
   
 	'use strict'
 	
