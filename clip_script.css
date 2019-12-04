@@ -1,0 +1,88 @@
+
+	// by grebennikovalex
+	
+	body {
+		background-color: white;
+		}
+		
+   .container {
+		width:546px; 
+		overflow:hidden; 
+		margin:auto; 
+		margin-top: 50px;}
+   .cube {
+		width:250px; 
+		height:250px; 
+		float:left; 
+		background-color: #596275;
+		margin: -34px; 
+		text-align: center; 
+		transform:scale(1.43, 1.43);
+		}
+	.cube:hover {
+		transition-duration:.3s; 
+		transition-timing-function:ease;  
+		transform:scale(1.4, 1.4); 
+		cursor: pointer;
+		background-color: #ff4757; 
+		text-align: center;
+		}
+	.cube:active {
+		transform:scale(0.8, 0.8); 
+		transition-duration:.5s; 
+		background-color: white;
+		}
+	.buttonHolder {
+		text-align: center; 
+		margin-top: 50px;
+		}
+	.btn {padding: 0.25rem 0.5rem; 
+		border: 3px solid white; 
+		color: white; 
+		background: rgba(0,0,0,0.6);
+		font-size: 1.44rem; 
+		cursor: pointer; 
+		outline: none;
+		}
+	.btn:hover {
+		background: rgb(0,0,0);
+		}
+	
+	.btn:active {
+		background: rgb(255,0,0);
+		}
+	.rangeHolder {
+		text-align: center; margin-top: 30px;
+		}
+	.range {
+		margin-top: 10px;
+		width: 546px; 
+		-webkit-appearance: none;   
+		height: 20px;
+		background: #d3d3d3;
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: .2s;
+		transition: opacity .2s;
+		}
+	.range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		border: 0; 
+		background: url('favicon_new_2.png');
+		cursor: pointer;
+		
+		}
+	
+	
+	
+	
+	.col {
+		margin: auto; padding-top: 120px; font-size: 7pt; width: 40px;  font-family: Arial;
+		}
+	
+	
+	
+  
