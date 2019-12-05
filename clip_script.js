@@ -56,13 +56,13 @@
     let colors = () => {
 		
 	
-		b = rangeb;
+		g = rangeb;
 		
 		s = s + Math.PI*2/parseInt(timer);
 		
-		g = 128 + ( 128 * Math.sin(s) );
+		//g = 128 + ( 128 * Math.sin(s) );
 		r = 128 + ( 128 * Math.sin(s) )* -1;
-		//b = 128 + ( 128 * Math.sin(s) );
+		b = 128 + ( 128 * Math.sin(s) );
 						
 				for ( let i = 0; i < 18; i++ ) {
 						  
@@ -74,7 +74,7 @@
 					rangeBar.style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
 					});
 								
-				b = b - rangeb/18;
+				g = g - rangeb/18;
 				
 				//r +=15;
 				
