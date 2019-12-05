@@ -5,6 +5,7 @@
 	let flash;
 	let timer = 200;
 	let scale = 1.43;
+	let flag = true;
 	let g;
 	let r;
 	//let b;
@@ -25,12 +26,25 @@
 	
 	
 	let flashing = () => flash = setInterval(colors, 25);
-	let reload = () => window.location.reload(false);
-	let stopFlashing = () => clearInterval(flash);
+			
+	let startFlash = () => {
+		
+			if (flag) {flashing(); flag = false;} else return;
+			
+	};		
+		
 	
+	let reload = () => window.location.reload(false);
+	let stopFlashing = () => {
+		
+			clearInterval(flash);
+			flag = true;
+		
+		};
+		
 	
 	reloadBtn.addEventListener('click', reload);
-	flashingBtn.addEventListener('click', flashing);	
+	flashingBtn.addEventListener('click', startFlash);	
 	stopFlashingBtn.addEventListener('click', stopFlashing);	
 	
 	rangeSlider1.oninput = () => timer = rangeSlider1.value;
