@@ -16,10 +16,11 @@
 	const stopFlashingBtn = document.getElementById('stopFlasing');
 	const colorNumber = document.getElementsByClassName('col');
 	const rangeBars = document.getElementsByClassName('range');
+	const cells = document.getElementsByClassName('cube');
 	
 	let changeColor = (r, g, b, i) => {
-		document.getElementsByClassName('cube')[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
-		document.getElementsByClassName('cube')[i].style.transform = 'scale(' + scale + ', ' + scale + ')';
+		cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
+		cells[i].style.transform = 'scale(' + scale + ', ' + scale + ')';
 	};
 	
 	let rangeSlider1 = document.getElementById('theRange1');
@@ -30,7 +31,8 @@
 			
 	let startFlash = () => {
 		
-			if (flag) {flashing(); flag = false;} else return;
+			if (flag) {flashing(); flag = false;} 
+			else return;
 			
 		};		
 			
@@ -43,15 +45,37 @@
 		
 		};
 		
+	//let cellScale = (cell) => cell.style.transform = 'scale(0.2, 0.2)';
+		
 	
 	reloadBtn.addEventListener('click', reload);
 	flashingBtn.addEventListener('click', startFlash);	
-	stopFlashingBtn.addEventListener('click', stopFlashing);	
+	stopFlashingBtn.addEventListener('click', stopFlashing);
+
+	/* [...cells].forEach(cell => {
+					cell.addEventListener('click', cellScale(this.cell));
+					}); */
 	
 	rangeSlider1.oninput = () => timer = rangeSlider1.value;
-	rangeSlider2.oninput = () => scale = parseInt(rangeSlider2.value)/100;
+	rangeSlider2.oninput = () => scale = parseInt(rangeSlider2.value)*0.0043 + 1;
 	rangeSlider3.oninput = () => rangeb = parseInt(rangeSlider3.value);	
+	
+	let sliderNumber1 =() => document.getElementById('sliderValue1').innerHTML = timer;
 		
+	let sliderNumber2 =() => {
+		
+			document.getElementById('sliderValue2').innerHTML = rangeSlider2.value;
+	
+			[...cells].forEach(cell => {
+					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
+					});
+			};
+			
+	let sliderNumber3 =() => document.getElementById('sliderValue3').innerHTML = rangeb;		
+			
+			
+					
+					
 		
     let colors = () => {
 		
@@ -59,6 +83,8 @@
 		g = rangeb;
 		
 		s = s + Math.PI*2/parseInt(timer);
+		
+		
 		
 		//g = 128 + ( 128 * Math.sin(s) );
 		r = 128 + ( 128 * Math.sin(s) )* -1;
