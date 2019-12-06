@@ -11,9 +11,6 @@
 	let r;
 	let b;
 	let s = 0;
-	
-	
-				
 	const reloadBtn = document.getElementById('reload');
 	const flashingBtn = document.getElementById('flashing');
 	const stopFlashingBtn = document.getElementById('stopFlasing');
@@ -22,6 +19,7 @@
 	const cells = document.getElementsByClassName('cube');
 <<<<<<< HEAD
 	
+<<<<<<< HEAD
 	[...cells].forEach(cell => {							
 							
 							cell.newScale = { 
@@ -35,11 +33,16 @@
 	
 =======
 	
+=======
+>>>>>>> parent of 3b1505d... Trying to work with objects
 	let changeColor = (r, g, b, i) => {
 		cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
 		cells[i].style.transform = 'scale(' + scale + ', ' + scale + ')';
 	};
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> parent of 3b1505d... Trying to work with objects
 	
 	let rangeSlider1 = document.getElementById('theRange1');
 	let rangeSlider2 = document.getElementById('theRange2');
@@ -64,16 +67,23 @@
 		};
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 	//let cellScale = (cell) => cell.style.transform = 'scale(0.2, 0.2)';
 		
 	
 >>>>>>> master
+=======
+	//let cellScale = (cell) => cell.style.transform = 'scale(0.2, 0.2)';
+		
+	
+>>>>>>> parent of 3b1505d... Trying to work with objects
 	reloadBtn.addEventListener('click', reload);
 	flashingBtn.addEventListener('click', startFlash);	
 	stopFlashingBtn.addEventListener('click', stopFlashing);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	
@@ -84,6 +94,11 @@
 					cell.addEventListener('click', cellScale(this.cell));
 					}); */
 >>>>>>> master
+=======
+	/* [...cells].forEach(cell => {
+					cell.addEventListener('click', cellScale(this.cell));
+					}); */
+>>>>>>> parent of 3b1505d... Trying to work with objects
 	
 	rangeSlider1.oninput = () => timer = rangeSlider1.value;
 	rangeSlider2.oninput = () => scale = parseInt(rangeSlider2.value)*0.0043 + 1;
@@ -97,6 +112,7 @@
 	
 			[...cells].forEach(cell => {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				
 					cell.onmousedown = () => cell.newScale.clickCount +=0.1;
 					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
@@ -105,6 +121,9 @@
 =======
 					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
 >>>>>>> master
+=======
+					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
+>>>>>>> parent of 3b1505d... Trying to work with objects
 					});
 			};
 			
@@ -112,10 +131,14 @@
 			
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 				
 =======
 					
 >>>>>>> master
+=======
+					
+>>>>>>> parent of 3b1505d... Trying to work with objects
 					
 		
     let colors = () => {
