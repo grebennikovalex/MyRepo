@@ -11,6 +11,9 @@
 	let r;
 	let b;
 	let s = 0;
+	
+	
+				
 	const reloadBtn = document.getElementById('reload');
 	const flashingBtn = document.getElementById('flashing');
 	const stopFlashingBtn = document.getElementById('stopFlasing');
@@ -18,10 +21,17 @@
 	const rangeBars = document.getElementsByClassName('range');
 	const cells = document.getElementsByClassName('cube');
 	
-	let changeColor = (r, g, b, i) => {
-		cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
-		cells[i].style.transform = 'scale(' + scale + ', ' + scale + ')';
-	};
+	[...cells].forEach(cell => {							
+							
+							cell.newScale = { 
+										clickCount: 0.1			
+									};
+		});
+		
+	
+	let changeColor = (r, g, b, i) => cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
+		
+	
 	
 	let rangeSlider1 = document.getElementById('theRange1');
 	let rangeSlider2 = document.getElementById('theRange2');
@@ -45,16 +55,15 @@
 		
 		};
 		
-	//let cellScale = (cell) => cell.style.transform = 'scale(0.2, 0.2)';
 		
-	
 	reloadBtn.addEventListener('click', reload);
 	flashingBtn.addEventListener('click', startFlash);	
 	stopFlashingBtn.addEventListener('click', stopFlashing);
 
-	/* [...cells].forEach(cell => {
-					cell.addEventListener('click', cellScale(this.cell));
-					}); */
+	
+	
+	
+	
 	
 	rangeSlider1.oninput = () => timer = rangeSlider1.value;
 	rangeSlider2.oninput = () => scale = parseInt(rangeSlider2.value)*0.0043 + 1;
@@ -67,14 +76,18 @@
 			document.getElementById('sliderValue2').innerHTML = rangeSlider2.value;
 	
 			[...cells].forEach(cell => {
+				
+					cell.onmousedown = () => cell.newScale.clickCount +=0.1;
 					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
+					
+					
 					});
 			};
 			
 	let sliderNumber3 =() => document.getElementById('sliderValue3').innerHTML = rangeb;		
 			
 			
-					
+				
 					
 		
     let colors = () => {
