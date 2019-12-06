@@ -20,6 +20,7 @@
 	const colorNumber = document.getElementsByClassName('col');
 	const rangeBars = document.getElementsByClassName('range');
 	const cells = document.getElementsByClassName('cube');
+<<<<<<< HEAD
 	
 	[...cells].forEach(cell => {							
 							
@@ -32,6 +33,13 @@
 	let changeColor = (r, g, b, i) => cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
 		
 	
+=======
+	
+	let changeColor = (r, g, b, i) => {
+		cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
+		cells[i].style.transform = 'scale(' + scale + ', ' + scale + ')';
+	};
+>>>>>>> master
 	
 	let rangeSlider1 = document.getElementById('theRange1');
 	let rangeSlider2 = document.getElementById('theRange2');
@@ -55,15 +63,27 @@
 		
 		};
 		
+<<<<<<< HEAD
 		
+=======
+	//let cellScale = (cell) => cell.style.transform = 'scale(0.2, 0.2)';
+		
+	
+>>>>>>> master
 	reloadBtn.addEventListener('click', reload);
 	flashingBtn.addEventListener('click', startFlash);	
 	stopFlashingBtn.addEventListener('click', stopFlashing);
 
+<<<<<<< HEAD
 	
 	
 	
 	
+=======
+	/* [...cells].forEach(cell => {
+					cell.addEventListener('click', cellScale(this.cell));
+					}); */
+>>>>>>> master
 	
 	rangeSlider1.oninput = () => timer = rangeSlider1.value;
 	rangeSlider2.oninput = () => scale = parseInt(rangeSlider2.value)*0.0043 + 1;
@@ -76,18 +96,26 @@
 			document.getElementById('sliderValue2').innerHTML = rangeSlider2.value;
 	
 			[...cells].forEach(cell => {
+<<<<<<< HEAD
 				
 					cell.onmousedown = () => cell.newScale.clickCount +=0.1;
 					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
 					
 					
+=======
+					cell.style.transform = 'scale(' + scale + ', ' + scale + ')';
+>>>>>>> master
 					});
 			};
 			
 	let sliderNumber3 =() => document.getElementById('sliderValue3').innerHTML = rangeb;		
 			
 			
+<<<<<<< HEAD
 				
+=======
+					
+>>>>>>> master
 					
 		
     let colors = () => {
