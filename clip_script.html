@@ -6,7 +6,7 @@
 
 	<title>clip_script</title>
 	<meta name="description">
-	<link rel="shortcut icon" href="favicon_new.png" type="image/x-icon">
+	<link rel="shortcut icon" href="files/favicon_new.png" type="image/x-icon">
 	<link rel="stylesheet" href="voronoi_script.css">
 	<link rel="stylesheet" href="clip_script.css">    
 	  
@@ -20,9 +20,21 @@
 </div>
 
 <div class="rangeHolder">
-<input type="range" min="10" max="360" id="theRange1" class ="range" value="200"></input>
-<input type="range" min="100" max="143" id="theRange2" class ="range" value="143"></input>  
-<input type="range" min="0" max="255" id="theRange3" class ="range" value="255"></input>  
+
+<input type="range" min="10" max="360" id="theRange1" class ="range" value="200"
+onmousemove = "sliderNumber1()" oninput = "sliderNumber1()"></input>
+<span id="sliderValue1" class="valueView">200</span>  
+
+<input type="range" min="0" max="100" id="theRange2" class ="range" value="100"
+onmousemove = "sliderNumber2()" oninput = "sliderNumber2()"></input>  
+<span id="sliderValue2" class="valueView">100</span>  
+
+
+<input type="range" min="0" max="255" id="theRange3" class ="range" value="255" 
+onmousemove = "sliderNumber3()" oninput = "sliderNumber3()"></input>
+<span id="sliderValue3" class="valueView">255</span>  
+
+
 </div>
 
 
