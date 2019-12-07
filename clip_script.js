@@ -11,6 +11,10 @@
 	let r;
 	let b;
 	let s = 0;
+	let counter = Array(18);
+	for (let i =0; i < counter.length; i++) {
+		counter[i] = 0;
+		};
 	
 	
 				
@@ -20,11 +24,7 @@
 	const colorNumber = document.getElementsByClassName('col');
 	const rangeBars = document.getElementsByClassName('range');
 	const cells = document.getElementsByClassName('cube');
-	
-	Element.prototype.clickCounter = {
-			  counter: 0.1,
-			  			};
-		
+
 	
 	let changeColor = (r, g, b, i) => cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
 		
@@ -72,14 +72,21 @@
 		
 			document.getElementById('sliderValue2').innerHTML = rangeSlider2.value;
 	
-			[...cells].forEach(cell => {
+			for (let i = 0; i < 18; i++) {
 				
-					cell.onmousedown = () => cell.counter +=0.1;
-					cell.style.transform = 'scale(' + (scale - cell.counter) + ', ' + scale + ')';
+					cells[i].onmousedown = () => {
+												
+								counter[i] +=0.1;
+								cells[i].style.transform = 'scale(' + (scale - counter[i]) + ', ' + (scale - counter[i]) + ')';
+														
+					};
 					
-					
-					});
+					cells[i].style.transform = 'scale(' + (scale - counter[i]) + ', ' + (scale - counter[i]) + ')';
+															
 			};
+			
+	};		
+			
 			
 	let sliderNumber3 =() => document.getElementById('sliderValue3').innerHTML = rangeb;		
 			
@@ -110,7 +117,7 @@
 					rangeBar.style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
 					});
 								
-				g = g - rangeb/18;
+				g = g - rangeb/17;
 				
 				//r +=15;
 				
