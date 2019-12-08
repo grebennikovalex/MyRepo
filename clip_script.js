@@ -12,9 +12,9 @@
 	let b;
 	let s = 0;
 	let counter = Array(18);
-	for (let i =0; i < counter.length; i++) {
-		counter[i] = 0;
-		};
+	//for (let i =0; i < counter.length; i++) {
+	//	counter[i] = 0;
+	//	};
 	
 	
 				
@@ -25,9 +25,12 @@
 	const rangeBars = document.getElementsByClassName('range');
 	const cells = document.getElementsByClassName('cube');
 
+	[...cells].forEach(cell => {
+					cell.counter = 0;
+					});
 	
 	let changeColor = (r, g, b, i) => cells[i].style.background = 'RGB(' + r + ',' + g + ',' + b + ')';
-		
+	let changeScale = (cell) => cell.style.transform = 'scale(' + (scale - cell.counter) + ', ' + (scale - cell.counter) + ')';	
 	
 	
 	let rangeSlider1 = document.getElementById('theRange1');
@@ -36,7 +39,7 @@
 	
 	let flashing = () => flash = setInterval(colors, 25);
 			
-	let startFlash = () => {
+	let startFlashing = () => {
 		
 			if (flag) {flashing(); flag = false;} 
 			else return;
@@ -54,7 +57,7 @@
 		
 		
 	reloadBtn.addEventListener('click', reload);
-	flashingBtn.addEventListener('click', startFlash);	
+	flashingBtn.addEventListener('click', startFlashing);	
 	stopFlashingBtn.addEventListener('click', stopFlashing);
 
 	
@@ -67,25 +70,27 @@
 	rangeSlider3.oninput = () => rangeb = parseInt(rangeSlider3.value);	
 	
 	let sliderNumber1 =() => document.getElementById('sliderValue1').innerHTML = timer;
+	
+	[...cells].forEach(cell => {
+			
+					cell.onmousedown = () => {
+						cell.counter += 0.1; 
+						console.log(cell.counter);
+						changeScale(cell);
+						
+					};
+	});
 		
 	let sliderNumber2 =() => {
 		
 			document.getElementById('sliderValue2').innerHTML = rangeSlider2.value;
-	
-			for (let i = 0; i < 18; i++) {
-				
-					cells[i].onmousedown = () => {
-												
-								counter[i] +=0.1;
-								cells[i].style.transform = 'scale(' + (scale - counter[i]) + ', ' + (scale - counter[i]) + ')';
-														
-					};
-					
-					cells[i].style.transform = 'scale(' + (scale - counter[i]) + ', ' + (scale - counter[i]) + ')';
-															
-			};
 			
-	};		
+			[...cells].forEach(cell => changeScale(cell));
+			
+	};
+		
+
+	
 			
 			
 	let sliderNumber3 =() => document.getElementById('sliderValue3').innerHTML = rangeb;		
